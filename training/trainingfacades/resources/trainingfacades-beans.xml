@@ -19,6 +19,12 @@
 	 <bean class="de.hybris.platform.commercefacades.user.data.RegisterData">
 		<property name="dateOfBirth" type="java.util.Date" />
 	 </bean>
+	 <bean class="de.hybris.platform.commercefacades.user.data.RegisterData">
+		<property name="customerAge" type="Integer"/> 
+	 </bean>
+	 <bean class="de.hybris.platform.commercefacades.user.data.CustomerData">
+		<property name="customerAge" type="Integer"/> 
+	 </bean>
 	
 	<bean class="de.hybris.platform.commercefacades.product.data.ProductData">
 		<property name="weight" type="String" />
