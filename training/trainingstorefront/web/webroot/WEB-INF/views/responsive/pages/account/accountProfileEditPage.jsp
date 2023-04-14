@@ -20,11 +20,12 @@
     <div class="container-lg col-md-6">
         <div class="account-section-content">
             <div class="account-section-form">
-                <form:form action="update-profile" method="post" modelAttribute="updateProfileForm">
+                <form:form action="update-profile" method="post" modelAttribute="customerProfileForm">
 
                     <formElement:formSelectBoxDefaultEnabled idKey="profile.title" labelKey="profile.title" path="titleCode" mandatory="true" skipBlank="false" skipBlankMessageKey="form.select.none" items="${titleData}" selectCSSClass="form-control"/>
                     <formElement:formInputBox idKey="profile.firstName" labelKey="profile.firstName" path="firstName" inputCSS="text" mandatory="true"/>
                     <formElement:formInputBox idKey="profile.lastName" labelKey="profile.lastName" path="lastName" inputCSS="text" mandatory="true"/>
+                    <formElement:formInputBox idKey="profile.customerAge" labelKey="profile.age" path="customerAge" inputCSS="text" mandatory="true"/>
 					
 
                     <div class="row">

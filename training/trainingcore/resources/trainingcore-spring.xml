@@ -545,4 +545,7 @@
 		<property name="itemCleanupHooks" ref="csTicketRetentionHooks"/>
 		<property name="ticketBusinessService" ref="ticketBusinessService"/>
 	</bean>
+	
+	<bean id="customerAgeHandler" class="com.hybris.training.core.dynamicattribute.CustomerAgeHandler"></bean>
+	
 </beans>
