@@ -205,4 +205,13 @@
 		<bean id="trainingCustomerFacade" class="com.hybris.training.facades.registerdata.pages.impl.TrainingCustomerFacadeImpl" 							parent="defaultCustomerFacade">
 	</bean>
 	
+	<alias name="customerAgeFacade" alias="customerFacade"/>
+		<bean id="customerAgeFacade" class="com.hybris.training.facades.registerdata.pages.impl.CustomerAgeFacadeImpl" 							parent="defaultCustomerFacade">
+	</bean>
+	
+	<bean id="customerAgeArrtributeFacade" class="com.hybris.training.facades.registerdata.pages.impl.CustomerAgeArrtributeFacade">
+		<property name="userService" ref="userService"/>
+	
+	</bean>
+	
 </beans>
