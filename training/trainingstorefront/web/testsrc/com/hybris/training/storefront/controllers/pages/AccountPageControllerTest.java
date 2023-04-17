@@ -16,7 +16,6 @@ import de.hybris.platform.acceleratorstorefrontcommons.controllers.pages.Abstrac
 import de.hybris.platform.acceleratorstorefrontcommons.forms.AddressForm;
 import de.hybris.platform.acceleratorstorefrontcommons.forms.UpdateEmailForm;
 import de.hybris.platform.acceleratorstorefrontcommons.forms.UpdatePasswordForm;
-import de.hybris.platform.acceleratorstorefrontcommons.forms.UpdateProfileForm;
 import de.hybris.platform.acceleratorstorefrontcommons.forms.validation.AddressValidator;
 import de.hybris.platform.acceleratorstorefrontcommons.forms.validation.EmailValidator;
 import de.hybris.platform.acceleratorstorefrontcommons.forms.validation.PasswordValidator;
@@ -54,7 +53,6 @@ import de.hybris.platform.commerceservices.search.pagedata.PaginationData;
 import de.hybris.platform.commerceservices.search.pagedata.SearchPageData;
 import de.hybris.platform.servicelayer.exceptions.UnknownIdentifierException;
 import de.hybris.platform.servicelayer.i18n.I18NService;
-import com.hybris.training.storefront.controllers.ControllerConstants;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -75,6 +73,9 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.support.BindingAwareModelMap;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.hybris.training.storefront.controllers.ControllerConstants;
+import com.hybris.training.storefront.form.CustomerProfileForm;
 
 
 @UnitTest
@@ -158,7 +159,7 @@ public class AccountPageControllerTest
 	@Mock
 	private UpdateEmailForm emailForm;
 	@Mock
-	private UpdateProfileForm profileForm;
+	private CustomerProfileForm profileForm;
 	@Mock
 	private UpdatePasswordForm passwordForm;
 	@Mock
@@ -199,8 +200,7 @@ public class AccountPageControllerTest
 
 		BDDMockito.given(cmsPreviewService.getPagePreviewCriteria()).willReturn(pagePreviewCriteriaData);
 		BDDMockito.given(accountBreadcrumbBuilder.getBreadcrumbs(Mockito.anyString())).willReturn(breadcrumbsList);
-		BDDMockito.given(cmsPageService.getPageForLabelOrId(Mockito.anyString(), Mockito.anyObject()))
-				.willReturn(contentPageModel);
+		BDDMockito.given(cmsPageService.getPageForLabelOrId(Mockito.anyString(), Mockito.anyObject())).willReturn(contentPageModel);
 		BDDMockito.given(pageTitleResolver.resolveContentPageTitle(Mockito.anyString())).willReturn(TITLE_FOR_PAGE);
 		BDDMockito.given(Boolean.valueOf(page.containsAttribute(CMS_PAGE_MODEL))).willReturn(Boolean.TRUE);
 		BDDMockito.given(page.asMap().get(CMS_PAGE_MODEL)).willReturn(abstractPageModel);
